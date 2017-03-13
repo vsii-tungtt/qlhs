@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLHSModelStoreContainer" CdmEntityContainer="QLHSEntities">
+    <EntitySetMapping Name="checks">
+      <EntityTypeMapping TypeName="QLHSModel.check">
+        <MappingFragment StoreEntitySet="checks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="ischecked" ColumnName="ischecked" />
+          <ScalarProperty Name="date_check" ColumnName="date_check" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classes">
+      <EntityTypeMapping TypeName="QLHSModel.class">
+        <MappingFragment StoreEntitySet="classes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="class_name" ColumnName="class_name" />
+          <ScalarProperty Name="hour" ColumnName="hour" />
+          <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_roles">
+      <EntityTypeMapping TypeName="QLHSModel.m_roles">
+        <MappingFragment StoreEntitySet="m_roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="m_statuses">
+      <EntityTypeMapping TypeName="QLHSModel.m_statuses">
+        <MappingFragment StoreEntitySet="m_statuses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scores">
+      <EntityTypeMapping TypeName="QLHSModel.score">
+        <MappingFragment StoreEntitySet="scores">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="score1" ColumnName="score" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="QLHSModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="school_year_begin" ColumnName="school_year_begin" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+          <ScalarProperty Name="school_year_end" ColumnName="school_year_end" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

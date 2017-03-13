@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLHSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="QLHSModelStoreContainer">
+    <EntitySet Name="checks" EntityType="QLHSModel.Store.checks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="classes" EntityType="QLHSModel.Store.classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="m_roles" EntityType="QLHSModel.Store.m_roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="m_statuses" EntityType="QLHSModel.Store.m_statuses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="scores" EntityType="QLHSModel.Store.scores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="QLHSModel.Store.users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_checks_classes" Association="QLHSModel.Store.FK_checks_classes">
+      <End Role="classes" EntitySet="classes" />
+      <End Role="checks" EntitySet="checks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_checks_users" Association="QLHSModel.Store.FK_checks_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="checks" EntitySet="checks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_classes_m_statuses" Association="QLHSModel.Store.FK_classes_m_statuses">
+      <End Role="m_statuses" EntitySet="m_statuses" />
+      <End Role="classes" EntitySet="classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_classes_users" Association="QLHSModel.Store.FK_classes_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="classes" EntitySet="classes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scores_classes" Association="QLHSModel.Store.FK_scores_classes">
+      <End Role="classes" EntitySet="classes" />
+      <End Role="scores" EntitySet="scores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scores_users" Association="QLHSModel.Store.FK_scores_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="scores" EntitySet="scores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_m_roles" Association="QLHSModel.Store.FK_users_m_roles">
+      <End Role="m_roles" EntitySet="m_roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="checks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="class_id" Type="int" Nullable="false" />
+    <Property Name="ischecked" Type="int" />
+    <Property Name="date_check" Type="datetime" Nullable="false" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="classes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="class_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hour" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="teacher_id" Type="int" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="date_begin" Type="date" />
+    <Property Name="date_end" Type="date" />
+    <Property Name="status_id" Type="int" Nullable="false" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="m_roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="role" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="m_statuses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="scores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="student_id" Type="int" Nullable="false" />
+    <Property Name="class_id" Type="int" Nullable="false" />
+    <Property Name="score" Type="float" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar(max)" />
+    <Property Name="birthday" Type="datetime" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="school_year_begin" Type="int" />
+    <Property Name="delflg" Type="int" Nullable="false" />
+    <Property Name="school_year_end" Type="int" />
+  </EntityType>
+  <Association Name="FK_checks_classes">
+    <End Role="classes" Type="QLHSModel.Store.classes" Multiplicity="1" />
+    <End Role="checks" Type="QLHSModel.Store.checks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="checks">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_checks_users">
+    <End Role="users" Type="QLHSModel.Store.users" Multiplicity="1" />
+    <End Role="checks" Type="QLHSModel.Store.checks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="checks">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_classes_m_statuses">
+    <End Role="m_statuses" Type="QLHSModel.Store.m_statuses" Multiplicity="1" />
+    <End Role="classes" Type="QLHSModel.Store.classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_statuses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="classes">
+        <PropertyRef Name="status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_classes_users">
+    <End Role="users" Type="QLHSModel.Store.users" Multiplicity="1" />
+    <End Role="classes" Type="QLHSModel.Store.classes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="classes">
+        <PropertyRef Name="teacher_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scores_classes">
+    <End Role="classes" Type="QLHSModel.Store.classes" Multiplicity="1" />
+    <End Role="scores" Type="QLHSModel.Store.scores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="scores">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scores_users">
+    <End Role="users" Type="QLHSModel.Store.users" Multiplicity="1" />
+    <End Role="scores" Type="QLHSModel.Store.scores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="scores">
+        <PropertyRef Name="student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_m_roles">
+    <End Role="m_roles" Type="QLHSModel.Store.m_roles" Multiplicity="1" />
+    <End Role="users" Type="QLHSModel.Store.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="m_roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

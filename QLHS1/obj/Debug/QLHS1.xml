@@ -1,0 +1,534 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+QLHS1
+</name>
+</assembly>
+<members>
+<member name="F:QLHS1.Logout.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:QLHS1.My.MyWebExtension.Application">
+	<summary>
+ Returns information about the current application.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="P:QLHS1.My.MyWebExtension.WebServices">
+	<summary>
+ Provides access to WebServices added to this project.
+ </summary>
+</member><member name="T:QLHS1.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:QLHS1.QLHSEntities.#ctor">
+	<summary>
+ Initializes a new QLHSEntities object using the connection string found in the 'QLHSEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new QLHSEntities object.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new QLHSEntities object.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.checks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.classes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.m_roles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.m_statuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.scores">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.QLHSEntities.users">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddTochecks(QLHS1.check)">
+	<summary>
+ Deprecated Method for adding a new object to the checks EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddToclasses(QLHS1.class)">
+	<summary>
+ Deprecated Method for adding a new object to the classes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddTom_roles(QLHS1.m_roles)">
+	<summary>
+ Deprecated Method for adding a new object to the m_roles EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddTom_statuses(QLHS1.m_statuses)">
+	<summary>
+ Deprecated Method for adding a new object to the m_statuses EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddToscores(QLHS1.score)">
+	<summary>
+ Deprecated Method for adding a new object to the scores EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:QLHS1.QLHSEntities.AddTousers(QLHS1.user)">
+	<summary>
+ Deprecated Method for adding a new object to the users EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="T:QLHS1.QLHSEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.check.Createcheck(System.Int32,System.Int32,System.Int32,System.DateTime,System.Int32)">
+	<summary>
+ Create a new check object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="user_id">Initial value of the user_id property.</param>
+	<param name="class_id">Initial value of the class_id property.</param>
+	<param name="date_check">Initial value of the date_check property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.check.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.user_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.class_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.ischecked">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.date_check">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.class">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.classReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.user">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.check.userReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.check">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.class.Createclass(System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new class object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="class_name">Initial value of the class_name property.</param>
+	<param name="hour">Initial value of the hour property.</param>
+	<param name="teacher_id">Initial value of the teacher_id property.</param>
+	<param name="status_id">Initial value of the status_id property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.class.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.class_name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.hour">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.teacher_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.description">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.date_begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.date_end">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.status_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.checks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.m_statuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.m_statusesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.user">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.userReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.class.scores">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.class">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.m_roles.Createm_roles(System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new m_roles object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="role">Initial value of the role property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.m_roles.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_roles.role">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_roles.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_roles.users">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.m_roles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.m_statuses.Createm_statuses(System.Int32,System.String,System.Int32)">
+	<summary>
+ Create a new m_statuses object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="status">Initial value of the status property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.m_statuses.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_statuses.status">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_statuses.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.m_statuses.classes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.m_statuses">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.score.Createscore(System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ Create a new score object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="student_id">Initial value of the student_id property.</param>
+	<param name="class_id">Initial value of the class_id property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.score.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.student_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.class_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.score1">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.class">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.classReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.user">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.score.userReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.score">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:QLHS1.user.Createuser(System.Int32,System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new user object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="username">Initial value of the username property.</param>
+	<param name="password">Initial value of the password property.</param>
+	<param name="role_id">Initial value of the role_id property.</param>
+	<param name="delflg">Initial value of the delflg property.</param>
+</member><member name="P:QLHS1.user.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.username">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.password">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.fullname">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.birthday">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.role_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.school_year_begin">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.delflg">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.school_year_end">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.checks">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.classes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.m_roles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.m_rolesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:QLHS1.user.scores">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:QLHS1.user">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="F:QLHS1.Site.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Site.HyperLink4">
+	<summary>
+HyperLink4 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Site.btnLogout">
+	<summary>
+btnLogout control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Site.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Site.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.lblError">
+	<summary>
+lblError control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login1.btnLogin">
+	<summary>
+btnLogin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login.head">
+	<summary>
+head control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login.ScriptManager1">
+	<summary>
+ScriptManager1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:QLHS1.Login.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

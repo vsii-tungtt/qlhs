@@ -1,0 +1,44 @@
+﻿<%@ Master Language="VB" CodeBehind="Site.master.vb" Inherits="QLHS1.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TungTT Site</title>
+    <link href="~/Style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Style/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="~/Style/adminlte.css" rel="stylesheet" type="text/css" />
+    <link href="~/Style/main.css" rel="stylesheet" type="text/css" />
+    <link href="~/Style/Site.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/jquery.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="Scripts/main.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-fluid">
+    <div class="DDMainHeader">
+        <h3>Hệ Thống quản lý sinh viên
+        <div class="pull-right">
+            <asp:HyperLink ID="HyperLink4" CssClass="btn btn-info" runat="server" NavigateUrl="#">TT Cá nhân</asp:HyperLink>
+            <asp:HyperLink ID="btnLogout" CssClass="btn btn-info" runat="server" NavigateUrl="~/Logout.aspx" Text="Đăng xuất" />
+        </div>
+        </h3>
+    </div>
+    
+    <div>
+        <%-- TODO: Enable partial rendering by setting the EnablePartialRendering attribute to "true" to provide a smoother browsing experience.
+             Leaving partial rendering disabled will provide a better debugging experience while the application is in development. --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="false"/>
+        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </div>
+    
+</body>
+</html>
+
