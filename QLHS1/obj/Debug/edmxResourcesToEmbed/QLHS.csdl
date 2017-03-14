@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLHSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityContainer Name="QLHSEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QLHSEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="checks" EntityType="QLHSModel.check" />
     <EntitySet Name="classes" EntityType="QLHSModel.class" />
     <EntitySet Name="m_roles" EntityType="QLHSModel.m_roles" />
     <EntitySet Name="m_statuses" EntityType="QLHSModel.m_statuses" />
     <EntitySet Name="scores" EntityType="QLHSModel.score" />
+    <EntitySet Name="study_dates" EntityType="QLHSModel.study_dates" />
     <EntitySet Name="users" EntityType="QLHSModel.user" />
-    <AssociationSet Name="FK_checks_classes" Association="QLHSModel.FK_checks_classes">
-      <End Role="classes" EntitySet="classes" />
+    <AssociationSet Name="FK_checks_study_dates" Association="QLHSModel.FK_checks_study_dates">
+      <End Role="study_dates" EntitySet="study_dates" />
       <End Role="checks" EntitySet="checks" />
     </AssociationSet>
     <AssociationSet Name="FK_checks_users" Association="QLHSModel.FK_checks_users">
@@ -27,6 +28,10 @@
       <End Role="classes" EntitySet="classes" />
       <End Role="scores" EntitySet="scores" />
     </AssociationSet>
+    <AssociationSet Name="FK_study_dates_classes" Association="QLHSModel.FK_study_dates_classes">
+      <End Role="classes" EntitySet="classes" />
+      <End Role="study_dates" EntitySet="study_dates" />
+    </AssociationSet>
     <AssociationSet Name="FK_users_m_roles" Association="QLHSModel.FK_users_m_roles">
       <End Role="m_roles" EntitySet="m_roles" />
       <End Role="users" EntitySet="users" />
@@ -41,12 +46,10 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="user_id" Type="Int32" Nullable="false" />
-    <Property Name="class_id" Type="Int32" Nullable="false" />
-    <Property Name="ischecked" Type="Int32" />
-    <Property Name="date_check" Type="DateTime" Nullable="false" />
+    <Property Name="student_id" Type="Int32" Nullable="false" />
+    <Property Name="date_id" Type="Int32" Nullable="false" />
     <Property Name="delflg" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="class" Relationship="QLHSModel.FK_checks_classes" FromRole="checks" ToRole="classes" />
+    <NavigationProperty Name="study_dates" Relationship="QLHSModel.FK_checks_study_dates" FromRole="checks" ToRole="study_dates" />
     <NavigationProperty Name="user" Relationship="QLHSModel.FK_checks_users" FromRole="checks" ToRole="users" />
   </EntityType>
   <EntityType Name="class">
@@ -62,10 +65,10 @@
     <Property Name="date_end" Type="DateTime" />
     <Property Name="status_id" Type="Int32" Nullable="false" />
     <Property Name="delflg" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="checks" Relationship="QLHSModel.FK_checks_classes" FromRole="classes" ToRole="checks" />
     <NavigationProperty Name="m_statuses" Relationship="QLHSModel.FK_classes_m_statuses" FromRole="classes" ToRole="m_statuses" />
     <NavigationProperty Name="user" Relationship="QLHSModel.FK_classes_users" FromRole="classes" ToRole="users" />
     <NavigationProperty Name="scores" Relationship="QLHSModel.FK_scores_classes" FromRole="classes" ToRole="scores" />
+    <NavigationProperty Name="study_dates" Relationship="QLHSModel.FK_study_dates_classes" FromRole="classes" ToRole="study_dates" />
   </EntityType>
   <EntityType Name="m_roles">
     <Key>
@@ -97,6 +100,17 @@
     <NavigationProperty Name="class" Relationship="QLHSModel.FK_scores_classes" FromRole="scores" ToRole="classes" />
     <NavigationProperty Name="user" Relationship="QLHSModel.FK_scores_users" FromRole="scores" ToRole="users" />
   </EntityType>
+  <EntityType Name="study_dates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="class_id" Type="Int32" Nullable="false" />
+    <Property Name="study_date" Type="DateTime" Nullable="false" />
+    <Property Name="delflg" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="checks" Relationship="QLHSModel.FK_checks_study_dates" FromRole="study_dates" ToRole="checks" />
+    <NavigationProperty Name="class" Relationship="QLHSModel.FK_study_dates_classes" FromRole="study_dates" ToRole="classes" />
+  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="id" />
@@ -115,15 +129,15 @@
     <NavigationProperty Name="m_roles" Relationship="QLHSModel.FK_users_m_roles" FromRole="users" ToRole="m_roles" />
     <NavigationProperty Name="scores" Relationship="QLHSModel.FK_scores_users" FromRole="users" ToRole="scores" />
   </EntityType>
-  <Association Name="FK_checks_classes">
-    <End Role="classes" Type="QLHSModel.class" Multiplicity="1" />
+  <Association Name="FK_checks_study_dates">
+    <End Role="study_dates" Type="QLHSModel.study_dates" Multiplicity="1" />
     <End Role="checks" Type="QLHSModel.check" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="classes">
+      <Principal Role="study_dates">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="checks">
-        <PropertyRef Name="class_id" />
+        <PropertyRef Name="date_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -135,7 +149,7 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="checks">
-        <PropertyRef Name="user_id" />
+        <PropertyRef Name="student_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -171,6 +185,18 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="scores">
+        <PropertyRef Name="class_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_study_dates_classes">
+    <End Role="classes" Type="QLHSModel.class" Multiplicity="1" />
+    <End Role="study_dates" Type="QLHSModel.study_dates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="classes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="study_dates">
         <PropertyRef Name="class_id" />
       </Dependent>
     </ReferentialConstraint>

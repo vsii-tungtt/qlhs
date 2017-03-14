@@ -96,8 +96,16 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassList.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
+    <Compile Include="ClassList.aspx.designer.vb">
+      <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassList.aspx.vb">
+      <DependentUpon>ClassList.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Dashboard.aspx.designer.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
@@ -121,6 +129,7 @@
     <Content Include="Logout.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\class-list.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\main.js" />
@@ -130,7 +139,7 @@
     </Compile>
     <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.Master.designer.vb">
       <DependentUpon>Login.Master</DependentUpon>
@@ -473,6 +482,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DynamicData\CustomPages\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

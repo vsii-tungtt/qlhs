@@ -18,13 +18,14 @@ Imports System.Runtime.Serialization
 Imports System.Xml.Serialization
 
 
-<Assembly: EdmSchemaAttribute("df2f3471-64a7-4fb1-8184-990fb025c79c")>
+<Assembly: EdmSchemaAttribute("f9afc824-4441-4b43-9e42-a4ff95c72946")>
 #Region "EDM Relationship Metadata"
-<Assembly: EdmRelationshipAttribute("QLHSModel", "FK_checks_classes", "classes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType([class]), "checks", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(check), True)>
+<Assembly: EdmRelationshipAttribute("QLHSModel", "FK_checks_study_dates", "study_dates", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(study_dates), "checks", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(check), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_checks_users", "users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(user), "checks", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(check), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_classes_m_statuses", "m_statuses", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(m_statuses), "classes", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType([class]), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_classes_users", "users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(user), "classes", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType([class]), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_scores_classes", "classes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType([class]), "scores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(score), True)>
+<Assembly: EdmRelationshipAttribute("QLHSModel", "FK_study_dates_classes", "classes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType([class]), "study_dates", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(study_dates), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_users_m_roles", "m_roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(m_roles), "users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(user), True)>
 <Assembly: EdmRelationshipAttribute("QLHSModel", "FK_scores_users", "users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(user), "scores", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(score), True)>
 
@@ -35,34 +36,34 @@ Imports System.Xml.Serialization
 ''' <summary>
 ''' No Metadata Documentation available.
 ''' </summary>
-Public Partial Class QLHSEntities
+Public Partial Class QLHSEntities1
     Inherits ObjectContext
 
     #Region "Constructors"
 
     ''' <summary>
-    ''' Initializes a new QLHSEntities object using the connection string found in the 'QLHSEntities' section of the application configuration file.
+    ''' Initializes a new QLHSEntities1 object using the connection string found in the 'QLHSEntities1' section of the application configuration file.
     ''' </summary>
     Public Sub New()
-        MyBase.New("name=QLHSEntities", "QLHSEntities")
+        MyBase.New("name=QLHSEntities1", "QLHSEntities1")
         MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
 
     ''' <summary>
-    ''' Initialize a new QLHSEntities object.
+    ''' Initialize a new QLHSEntities1 object.
     ''' </summary>
     Public Sub New(ByVal connectionString As String)
-        MyBase.New(connectionString, "QLHSEntities")
+        MyBase.New(connectionString, "QLHSEntities1")
         MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
 
     ''' <summary>
-    ''' Initialize a new QLHSEntities object.
+    ''' Initialize a new QLHSEntities1 object.
     ''' </summary>
     Public Sub New(ByVal connection As EntityConnection)
-        MyBase.New(connection, "QLHSEntities")
+        MyBase.New(connection, "QLHSEntities1")
         MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
@@ -151,6 +152,20 @@ Public Partial Class QLHSEntities
     ''' <summary>
     ''' No Metadata Documentation available.
     ''' </summary>
+    Public ReadOnly Property study_dates() As ObjectSet(Of study_dates)
+        Get
+            If (_study_dates Is Nothing) Then
+                _study_dates = MyBase.CreateObjectSet(Of study_dates)("study_dates")
+            End If
+            Return _study_dates
+        End Get
+    End Property
+
+    Private _study_dates As ObjectSet(Of study_dates)
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
     Public ReadOnly Property users() As ObjectSet(Of user)
         Get
             If (_users Is Nothing) Then
@@ -202,6 +217,13 @@ Public Partial Class QLHSEntities
     End Sub
 
     ''' <summary>
+    ''' Deprecated Method for adding a new object to the study_dates EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+    ''' </summary>
+    Public Sub AddTostudy_dates(ByVal study_dates As study_dates)
+        MyBase.AddObject("study_dates", study_dates)
+    End Sub
+
+    ''' <summary>
     ''' Deprecated Method for adding a new object to the users EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
     ''' </summary>
     Public Sub AddTousers(ByVal user As user)
@@ -230,16 +252,14 @@ Public Partial Class check
     ''' Create a new check object.
     ''' </summary>
     ''' <param name="id">Initial value of the id property.</param>
-    ''' <param name="user_id">Initial value of the user_id property.</param>
-    ''' <param name="class_id">Initial value of the class_id property.</param>
-    ''' <param name="date_check">Initial value of the date_check property.</param>
+    ''' <param name="student_id">Initial value of the student_id property.</param>
+    ''' <param name="date_id">Initial value of the date_id property.</param>
     ''' <param name="delflg">Initial value of the delflg property.</param>
-    Public Shared Function Createcheck(id As Global.System.Int32, user_id As Global.System.Int32, class_id As Global.System.Int32, date_check As Global.System.DateTime, delflg As Global.System.Int32) As check
+    Public Shared Function Createcheck(id As Global.System.Int32, student_id As Global.System.Int32, date_id As Global.System.Int32, delflg As Global.System.Int32) As check
         Dim check as check = New check
         check.id = id
-        check.user_id = user_id
-        check.class_id = class_id
-        check.date_check = date_check
+        check.student_id = student_id
+        check.date_id = date_id
         check.delflg = delflg
         Return check
     End Function
@@ -280,24 +300,24 @@ Public Partial Class check
     ''' </summary>
     <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property user_id() As Global.System.Int32
+    Public Property student_id() As Global.System.Int32
         Get
-            Return _user_id
+            Return _student_id
         End Get
         Set
-            Onuser_idChanging(value)
-            ReportPropertyChanging("user_id")
-            _user_id = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("user_id")
-            Onuser_idChanged()
+            Onstudent_idChanging(value)
+            ReportPropertyChanging("student_id")
+            _student_id = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("student_id")
+            Onstudent_idChanged()
         End Set
     End Property
 
-    Private _user_id As Global.System.Int32
-    Private Partial Sub Onuser_idChanging(value As Global.System.Int32)
+    Private _student_id As Global.System.Int32
+    Private Partial Sub Onstudent_idChanging(value As Global.System.Int32)
     End Sub
 
-    Private Partial Sub Onuser_idChanged()
+    Private Partial Sub Onstudent_idChanged()
     End Sub
 
     ''' <summary>
@@ -305,74 +325,24 @@ Public Partial Class check
     ''' </summary>
     <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
     <DataMemberAttribute()>
-    Public Property class_id() As Global.System.Int32
+    Public Property date_id() As Global.System.Int32
         Get
-            Return _class_id
+            Return _date_id
         End Get
         Set
-            Onclass_idChanging(value)
-            ReportPropertyChanging("class_id")
-            _class_id = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("class_id")
-            Onclass_idChanged()
+            Ondate_idChanging(value)
+            ReportPropertyChanging("date_id")
+            _date_id = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("date_id")
+            Ondate_idChanged()
         End Set
     End Property
 
-    Private _class_id As Global.System.Int32
-    Private Partial Sub Onclass_idChanging(value As Global.System.Int32)
+    Private _date_id As Global.System.Int32
+    Private Partial Sub Ondate_idChanging(value As Global.System.Int32)
     End Sub
 
-    Private Partial Sub Onclass_idChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=true)>
-    <DataMemberAttribute()>
-    Public Property ischecked() As Nullable(Of Global.System.Int32)
-        Get
-            Return _ischecked
-        End Get
-        Set
-            OnischeckedChanging(value)
-            ReportPropertyChanging("ischecked")
-            _ischecked = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("ischecked")
-            OnischeckedChanged()
-        End Set
-    End Property
-
-    Private _ischecked As Nullable(Of Global.System.Int32)
-    Private Partial Sub OnischeckedChanging(value As Nullable(Of Global.System.Int32))
-    End Sub
-
-    Private Partial Sub OnischeckedChanged()
-    End Sub
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
-    <DataMemberAttribute()>
-    Public Property date_check() As Global.System.DateTime
-        Get
-            Return _date_check
-        End Get
-        Set
-            Ondate_checkChanging(value)
-            ReportPropertyChanging("date_check")
-            _date_check = StructuralObject.SetValidValue(value)
-            ReportPropertyChanged("date_check")
-            Ondate_checkChanged()
-        End Set
-    End Property
-
-    Private _date_check As Global.System.DateTime
-    Private Partial Sub Ondate_checkChanging(value As Global.System.DateTime)
-    End Sub
-
-    Private Partial Sub Ondate_checkChanged()
+    Private Partial Sub Ondate_idChanged()
     End Sub
 
     ''' <summary>
@@ -410,13 +380,13 @@ Public Partial Class check
     <XmlIgnoreAttribute()>
     <SoapIgnoreAttribute()>
     <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_checks_classes", "classes")>
-    Public Property [class]() As [class]
+    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_checks_study_dates", "study_dates")>
+    Public Property study_dates() As study_dates
         Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_checks_classes", "classes").Value
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of study_dates)("QLHSModel.FK_checks_study_dates", "study_dates").Value
         End Get
         Set
-            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_checks_classes", "classes").Value = value
+            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of study_dates)("QLHSModel.FK_checks_study_dates", "study_dates").Value = value
         End Set
     End Property
     ''' <summary>
@@ -424,13 +394,13 @@ Public Partial Class check
     ''' </summary>
     <BrowsableAttribute(False)>
     <DataMemberAttribute()>
-    Public Property classReference() As EntityReference(Of [class])
+    Public Property study_datesReference() As EntityReference(Of study_dates)
         Get
-            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_checks_classes", "classes")
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of study_dates)("QLHSModel.FK_checks_study_dates", "study_dates")
         End Get
         Set
             If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of [class])("QLHSModel.FK_checks_classes", "classes", value)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of study_dates)("QLHSModel.FK_checks_study_dates", "study_dates", value)
             End If
         End Set
     End Property
@@ -741,24 +711,6 @@ Public Partial Class [class]
     <XmlIgnoreAttribute()>
     <SoapIgnoreAttribute()>
     <DataMemberAttribute()>
-    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_checks_classes", "checks")>
-     Public Property checks() As EntityCollection(Of check)
-        Get
-            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of check)("QLHSModel.FK_checks_classes", "checks")
-        End Get
-        Set
-            If (Not value Is Nothing)
-                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of check)("QLHSModel.FK_checks_classes", "checks", value)
-            End If
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' No Metadata Documentation available.
-    ''' </summary>
-    <XmlIgnoreAttribute()>
-    <SoapIgnoreAttribute()>
-    <DataMemberAttribute()>
     <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_classes_m_statuses", "m_statuses")>
     Public Property m_statuses() As m_statuses
         Get
@@ -829,6 +781,24 @@ Public Partial Class [class]
         Set
             If (Not value Is Nothing)
                 CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of score)("QLHSModel.FK_scores_classes", "scores", value)
+            End If
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <XmlIgnoreAttribute()>
+    <SoapIgnoreAttribute()>
+    <DataMemberAttribute()>
+    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_study_dates_classes", "study_dates")>
+     Public Property study_dates() As EntityCollection(Of study_dates)
+        Get
+            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of study_dates)("QLHSModel.FK_study_dates_classes", "study_dates")
+        End Get
+        Set
+            If (Not value Is Nothing)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of study_dates)("QLHSModel.FK_study_dates_classes", "study_dates", value)
             End If
         End Set
     End Property
@@ -1318,6 +1288,195 @@ Public Partial Class score
         Set
             If (Not value Is Nothing)
                 CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of user)("QLHSModel.FK_scores_users", "users", value)
+            End If
+        End Set
+    End Property
+
+    #End Region
+
+End Class
+
+''' <summary>
+''' No Metadata Documentation available.
+''' </summary>
+<EdmEntityTypeAttribute(NamespaceName:="QLHSModel", Name:="study_dates")>
+<Serializable()>
+<DataContractAttribute(IsReference:=True)>
+Public Partial Class study_dates
+    Inherits EntityObject
+    #Region "Factory Method"
+
+    ''' <summary>
+    ''' Create a new study_dates object.
+    ''' </summary>
+    ''' <param name="id">Initial value of the id property.</param>
+    ''' <param name="class_id">Initial value of the class_id property.</param>
+    ''' <param name="study_date">Initial value of the study_date property.</param>
+    ''' <param name="delflg">Initial value of the delflg property.</param>
+    Public Shared Function Createstudy_dates(id As Global.System.Int32, class_id As Global.System.Int32, study_date As Global.System.DateTime, delflg As Global.System.Int32) As study_dates
+        Dim study_dates as study_dates = New study_dates
+        study_dates.id = id
+        study_dates.class_id = class_id
+        study_dates.study_date = study_date
+        study_dates.delflg = delflg
+        Return study_dates
+    End Function
+
+    #End Region
+
+    #Region "Primitive Properties"
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property id() As Global.System.Int32
+        Get
+            Return _id
+        End Get
+        Set
+            If (_id <> Value) Then
+                OnidChanging(value)
+                ReportPropertyChanging("id")
+                _id = StructuralObject.SetValidValue(value)
+                ReportPropertyChanged("id")
+                OnidChanged()
+            End If
+        End Set
+    End Property
+
+    Private _id As Global.System.Int32
+    Private Partial Sub OnidChanging(value As Global.System.Int32)
+    End Sub
+
+    Private Partial Sub OnidChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property class_id() As Global.System.Int32
+        Get
+            Return _class_id
+        End Get
+        Set
+            Onclass_idChanging(value)
+            ReportPropertyChanging("class_id")
+            _class_id = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("class_id")
+            Onclass_idChanged()
+        End Set
+    End Property
+
+    Private _class_id As Global.System.Int32
+    Private Partial Sub Onclass_idChanging(value As Global.System.Int32)
+    End Sub
+
+    Private Partial Sub Onclass_idChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property study_date() As Global.System.DateTime
+        Get
+            Return _study_date
+        End Get
+        Set
+            Onstudy_dateChanging(value)
+            ReportPropertyChanging("study_date")
+            _study_date = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("study_date")
+            Onstudy_dateChanged()
+        End Set
+    End Property
+
+    Private _study_date As Global.System.DateTime
+    Private Partial Sub Onstudy_dateChanging(value As Global.System.DateTime)
+    End Sub
+
+    Private Partial Sub Onstudy_dateChanged()
+    End Sub
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <EdmScalarPropertyAttribute(EntityKeyProperty:=false, IsNullable:=false)>
+    <DataMemberAttribute()>
+    Public Property delflg() As Global.System.Int32
+        Get
+            Return _delflg
+        End Get
+        Set
+            OndelflgChanging(value)
+            ReportPropertyChanging("delflg")
+            _delflg = StructuralObject.SetValidValue(value)
+            ReportPropertyChanged("delflg")
+            OndelflgChanged()
+        End Set
+    End Property
+
+    Private _delflg As Global.System.Int32
+    Private Partial Sub OndelflgChanging(value As Global.System.Int32)
+    End Sub
+
+    Private Partial Sub OndelflgChanged()
+    End Sub
+
+    #End Region
+
+    #Region "Navigation Properties"
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <XmlIgnoreAttribute()>
+    <SoapIgnoreAttribute()>
+    <DataMemberAttribute()>
+    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_checks_study_dates", "checks")>
+     Public Property checks() As EntityCollection(Of check)
+        Get
+            Return CType(Me,IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of check)("QLHSModel.FK_checks_study_dates", "checks")
+        End Get
+        Set
+            If (Not value Is Nothing)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of check)("QLHSModel.FK_checks_study_dates", "checks", value)
+            End If
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <XmlIgnoreAttribute()>
+    <SoapIgnoreAttribute()>
+    <DataMemberAttribute()>
+    <EdmRelationshipNavigationPropertyAttribute("QLHSModel", "FK_study_dates_classes", "classes")>
+    Public Property [class]() As [class]
+        Get
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_study_dates_classes", "classes").Value
+        End Get
+        Set
+            CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_study_dates_classes", "classes").Value = value
+        End Set
+    End Property
+    ''' <summary>
+    ''' No Metadata Documentation available.
+    ''' </summary>
+    <BrowsableAttribute(False)>
+    <DataMemberAttribute()>
+    Public Property classReference() As EntityReference(Of [class])
+        Get
+            Return CType(Me, IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of [class])("QLHSModel.FK_study_dates_classes", "classes")
+        End Get
+        Set
+            If (Not value Is Nothing)
+                CType(Me, IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of [class])("QLHSModel.FK_study_dates_classes", "classes", value)
             End If
         End Set
     End Property

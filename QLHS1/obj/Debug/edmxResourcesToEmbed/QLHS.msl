@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLHSModelStoreContainer" CdmEntityContainer="QLHSEntities">
+  <EntityContainerMapping StorageEntityContainer="QLHSModelStoreContainer" CdmEntityContainer="QLHSEntities1">
     <EntitySetMapping Name="checks">
       <EntityTypeMapping TypeName="QLHSModel.check">
         <MappingFragment StoreEntitySet="checks">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="user_id" ColumnName="user_id" />
-          <ScalarProperty Name="class_id" ColumnName="class_id" />
-          <ScalarProperty Name="ischecked" ColumnName="ischecked" />
-          <ScalarProperty Name="date_check" ColumnName="date_check" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="date_id" ColumnName="date_id" />
           <ScalarProperty Name="delflg" ColumnName="delflg" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -53,6 +51,16 @@
           <ScalarProperty Name="student_id" ColumnName="student_id" />
           <ScalarProperty Name="class_id" ColumnName="class_id" />
           <ScalarProperty Name="score1" ColumnName="score" />
+          <ScalarProperty Name="delflg" ColumnName="delflg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="study_dates">
+      <EntityTypeMapping TypeName="QLHSModel.study_dates">
+        <MappingFragment StoreEntitySet="study_dates">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="class_id" ColumnName="class_id" />
+          <ScalarProperty Name="study_date" ColumnName="study_date" />
           <ScalarProperty Name="delflg" ColumnName="delflg" />
         </MappingFragment>
       </EntityTypeMapping>
