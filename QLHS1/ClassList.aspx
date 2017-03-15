@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title">Tìm kiếm </h3>
+            <h3 class="box-title"><asp:Label runat="server" Text="Tìm Kiếm"></asp:Label>  </h3>
         </div>
         <div class="box-body">
             <div class="row">
@@ -49,7 +49,7 @@
     </div>
     <form id="form1" runat="server">
     <div class="box">
-        <div class="box-title with-border">
+        <div class="box-header with-border">
             <h3 class="box-title">
             <asp:Label ID="txtTitle" runat="server"></asp:Label>
             </h3>
@@ -70,7 +70,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Tên Khóa học">
                                         <ItemTemplate>
-                                            <asp:Label runat="server" Text='<%# Eval("class_name") %>'></asp:Label>
+                                            <asp:HyperLink NavigateUrl='<%# "~/ClassDetail.aspx?classId="+Eval("id").ToString %>' runat="server" Text='<%# Eval("class_name") %>'></asp:HyperLink>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Ngày BĐ">

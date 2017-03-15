@@ -96,9 +96,17 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassDetail.aspx" />
     <Content Include="ClassList.aspx" />
     <Content Include="Dashboard.aspx" />
     <Content Include="Default.aspx" />
+    <Compile Include="ClassDetail.aspx.designer.vb">
+      <DependentUpon>ClassDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassDetail.aspx.vb">
+      <DependentUpon>ClassDetail.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="ClassList.aspx.designer.vb">
       <DependentUpon>ClassList.aspx</DependentUpon>
     </Compile>

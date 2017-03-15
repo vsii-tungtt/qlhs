@@ -3,6 +3,8 @@ Imports System.Web.Security
 Imports QLHS1
 Public Class ClassList
     Inherits System.Web.UI.Page
+    Dim ROLE_TEACHER As String = "1"
+    Dim ROLE_STUDENT As String = "2"
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             Me.BindGrid()
@@ -35,5 +37,8 @@ Public Class ClassList
             GridView1.DataBind()
         End Using
         txtTitle.Text = "Kết quả: " + GridView1.Rows.Count.ToString + " bản ghi"
+        If Session("Role") = ROLE_TEACHER Then
+            GridView1.Columns(6).Visible = False
+        End If
     End Sub
 End Class

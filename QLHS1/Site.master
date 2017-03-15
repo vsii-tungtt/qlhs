@@ -23,6 +23,7 @@
     <div class="DDMainHeader">
         <h3>Hệ Thống quản lý sinh viên
         <div class="pull-right">
+            <asp:HyperLink ID="HyperLink1" CssClass="btn btn-info" runat="server" NavigateUrl="~/ClassList.aspx">Danh sách lớp</asp:HyperLink>
             <asp:HyperLink ID="HyperLink4" CssClass="btn btn-info" runat="server" NavigateUrl="#">TT Cá nhân</asp:HyperLink>
             <asp:HyperLink ID="btnLogout" CssClass="btn btn-info" runat="server" NavigateUrl="~/Logout.aspx" Text="Đăng xuất" />
         </div>
